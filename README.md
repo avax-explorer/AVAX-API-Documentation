@@ -14,6 +14,7 @@ Create Keypair
 This endpoint generates a new wallet with a private and public key. These keys are returned in base58 format.
 Request
 
+```http
 GET https://avax-explorer.co/api/create/keypair
 
 Response
@@ -29,7 +30,7 @@ You can use these keys to interact with the Avalanche network, including signing
 
 If you already have a mnemonic phrase (a list of words used to generate a wallet), you can use this endpoint to create or restore an account.
 Request
-
+```http
 POST https://avax-explorer.co/api/create/account/by_mnemonic
 
 Payload
@@ -54,7 +55,7 @@ You can use the private_key to sign transactions and manage the wallet, while th
 
 The /api/transfer/avax endpoint allows you to transfer AVAX tokens from one wallet to another. To perform a transfer, you need to provide the sender's private_key, the recipient’s public_address, and the amount of AVAX to send.
 Request
-
+```http
 POST https://avax-explorer.co/api/transfer/avax
 
 Payload
@@ -135,7 +136,7 @@ Response
 
 This endpoint retrieves information about the latest block and ledger state on the Avalanche network.
 Request
-
+```http
 GET https://avax-explorer.co/api/blockchain/ledger
 
 Response
@@ -154,7 +155,7 @@ Get Network Status
 
 This endpoint provides details about the current state of the Avalanche network, including peer count and uptime.
 Request
-
+```http
 GET https://avax-explorer.co/api/network/info
 
 Response
