@@ -3,23 +3,10 @@
 The AVAX-Explorer API provides developers with the tools to interact programmatically with the Avalanche (AVAX) blockchain. It enables users to perform common blockchain operations such as token transfers, wallet management, querying block data, and monitoring network status.
 
 This documentation outlines the key API endpoints and provides code examples for each use case, helping you integrate AVAX functionality into your decentralized applications (dApps) or other blockchain-related projects.
-Table of Contents
 
-    Account Management
-        Create Keypair
-        Create Account by Mnemonic
-    Token Operations
-        Transfer AVAX
-    Transactions
-        Submit a Transaction
-    Blockchain Data
-        Get Block Information
-        Get Latest Ledger Data
-    Network Information
-        Get Network Status
-    Conclusion
+https://medium.com/@elliotpearce01/using-the-avalanche-api-for-development-with-avax-explorer-gateway-api-e56de9b2fc04
 
-Account Management
+## Account Management
 
 The Account Management API allows you to create wallets, manage keys, and recover accounts using a mnemonic phrase. This section covers how to generate a new keypair and how to create an account from a mnemonic phrase.
 Create Keypair
@@ -37,21 +24,22 @@ Response
 }
 
 You can use these keys to interact with the Avalanche network, including signing transactions and transferring AVAX tokens.
-Create Account by Mnemonic
+
+## Create Account by Mnemonic
 
 If you already have a mnemonic phrase (a list of words used to generate a wallet), you can use this endpoint to create or restore an account.
 Request
 
 POST https://avax-explorer.co/api/create/account/by_mnemonic
 
-Payload
+## Payload
 
 {
   "mnemonic": "apple banana orange grape ...",
   "account_name": "MyAVAXAccount"
 }
 
-Response
+## Response
 
 {
   "account_address": "X-avax1...",
@@ -60,15 +48,16 @@ Response
 }
 
 You can use the private_key to sign transactions and manage the wallet, while the account_address is used to receive AVAX tokens.
-Token Operations
-Transfer AVAX
+
+## Token Operations
+### Transfer AVAX
 
 The /api/transfer/avax endpoint allows you to transfer AVAX tokens from one wallet to another. To perform a transfer, you need to provide the sender's private_key, the recipient’s public_address, and the amount of AVAX to send.
 Request
 
 POST https://avax-explorer.co/api/transfer/avax
 
-Payload
+### Payload
 
 {
   "private_key": "5JrYt7WkXYiXb3AkZGzjpP7zy8Tt9Kf1cv...",
@@ -76,7 +65,7 @@ Payload
   "amount": 10.5
 }
 
-Response
+### Response
 
 {
   "status": "success",
@@ -89,17 +78,19 @@ Response
     amount: The amount of AVAX to transfer.
 
 After calling this endpoint, you will receive a transaction_id which can be used to track the status of the transfer on the blockchain.
-Transactions
+
+## Transactions
 
 The Transactions API allows you to submit custom transactions to the Avalanche network. This can be used to send AVAX or interact with smart contracts.
-Submit a Transaction
+
+### Submit a Transaction
 
 This endpoint submits a transaction to the Avalanche network. You must include the sender's private_key and the transaction_data.
 Request
 
 POST https://avax-explorer.co/api/transactions
 
-Payload
+### Payload
 
 {
   "private_key": "5JrYt7WkXYiXb3AkZGzjpP7zy8Tt9Kf1cv...",
@@ -109,7 +100,7 @@ Payload
   }
 }
 
-Response
+### Response
 
 {
   "status": "success",
@@ -117,17 +108,19 @@ Response
 }
 
 The transaction_data typically contains the amount and recipient address, but it can vary depending on the type of transaction.
-Blockchain Data
+
+### Blockchain Data
 
 AVAX-Explorer offers several endpoints to retrieve information about the blockchain and specific blocks. This is useful for tracking block confirmations, understanding the state of the chain, and analyzing transaction data.
 Get Block Information
 
 This endpoint retrieves information about a specific block on the Avalanche blockchain.
-Request
+
+### Request
 
 GET https://avax-explorer.co/api/blocks/{block_id}
 
-Response
+### Response
 
 {
   "block_id": 1000001,
@@ -139,14 +132,14 @@ Response
     block_data: General information about the block.
     timestamp: The block’s creation timestamp.
 
-Get Latest Ledger Data
+## Get Latest Ledger Data
 
 This endpoint retrieves information about the latest block and ledger state on the Avalanche network.
 Request
 
 GET https://avax-explorer.co/api/blockchain/ledger
 
-Response
+### Response
 
 {
   "latest_block": "1000001",
@@ -154,7 +147,8 @@ Response
 }
 
 This response includes the latest_block and timestamp, indicating the most recent block on the blockchain.
-Network Information
+
+## Network Information
 
 You can monitor the status and health of the Avalanche network using the Network Information endpoint.
 Get Network Status
@@ -164,7 +158,7 @@ Request
 
 GET https://avax-explorer.co/api/network/info
 
-Response
+### Response
 
 {
   "network_status": "healthy",
@@ -176,7 +170,7 @@ Response
     peer_count: The number of peers connected to the network.
     uptime: The percentage of time the network has been operational.
 
-Conclusion
+## Conclusion
 
 The AVAX-Explorer API offers a comprehensive suite of endpoints for interacting with the Avalanche blockchain. Whether you're transferring AVAX tokens, querying blockchain data, or managing accounts, the API provides the necessary tools to build decentralized applications on the Avalanche network.
 
