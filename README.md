@@ -32,14 +32,14 @@ Request
 
 POST https://avax-explorer.co/api/create/account/by_mnemonic
 
-## Payload
+Payload
 
 {
   "mnemonic": "apple banana orange grape ...",
   "account_name": "MyAVAXAccount"
 }
 
-## Response
+Response
 
 {
   "account_address": "X-avax1...",
@@ -57,7 +57,7 @@ Request
 
 POST https://avax-explorer.co/api/transfer/avax
 
-### Payload
+Payload
 
 {
   "private_key": "5JrYt7WkXYiXb3AkZGzjpP7zy8Tt9Kf1cv...",
@@ -65,7 +65,7 @@ POST https://avax-explorer.co/api/transfer/avax
   "amount": 10.5
 }
 
-### Response
+Response
 
 {
   "status": "success",
@@ -89,8 +89,7 @@ This endpoint submits a transaction to the Avalanche network. You must include t
 Request
 
 POST https://avax-explorer.co/api/transactions
-
-### Payload
+Payload
 
 {
   "private_key": "5JrYt7WkXYiXb3AkZGzjpP7zy8Tt9Kf1cv...",
@@ -100,7 +99,7 @@ POST https://avax-explorer.co/api/transactions
   }
 }
 
-### Response
+Response
 
 {
   "status": "success",
@@ -116,11 +115,11 @@ Get Block Information
 
 This endpoint retrieves information about a specific block on the Avalanche blockchain.
 
-### Request
+Request
 
 GET https://avax-explorer.co/api/blocks/{block_id}
 
-### Response
+Response
 
 {
   "block_id": 1000001,
@@ -139,7 +138,7 @@ Request
 
 GET https://avax-explorer.co/api/blockchain/ledger
 
-### Response
+Response
 
 {
   "latest_block": "1000001",
@@ -158,7 +157,7 @@ Request
 
 GET https://avax-explorer.co/api/network/info
 
-### Response
+Response
 
 {
   "network_status": "healthy",
